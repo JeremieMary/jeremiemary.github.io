@@ -8,13 +8,13 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Jérémie Mary"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+name                     : &name "Jérémie Mary"
+description              : &description "Research Scientist at Criteo AI Lab, focusing on Machine Learning, Recommender Systems, and Fair ML"
+url                      : https://jeremiemary.github.io # Update this with your GitHub username
+baseurl                  : "" 
+repository               : "jeremiemary/jeremiemary.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -27,52 +27,31 @@ author:
   bio              : "Research Scientist at Criteo AI Lab | Former Associate Professor at Université de Lille | Machine Learning & Fair AI"
   location         : "Paris, France"
   employer         : "Criteo AI Lab"
-  uri              : # URL
-  email            : "j.mary@criteo.com" 
+  uri              : "https://dblp.org/pid/17/3180.html"
+  email            : "j.mary@criteo.com"
 
   # Academic websites
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=T3dQRjAAAAAJ&hl=fr"
-  impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
-  semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  arxiv            : # URL
+  googlescholar    : "https://scholar.google.com/citations?user=T3dQRjAAAAAJ"
+  dblp             : "https://dblp.org/pid/17/3180.html"
+  semantic_scholar : # URL
   researchgate     : # URL
-  scopus           : # URL
-
+  orcid            : # URL
+  
   # Repositories and software development
-  bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "academicpages"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
-
+  github           : # Add if you want to share your GitHub profile
+  
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
   twitter          : "JeremieMary"
+  linkedin         : # Add if you want to share your LinkedIn profile
+
+  # Remove or comment out unused social media links
+  facebook         : # Username
+  instagram        : # Username
+  mastodon         : # URL
+  tumblr           : # Username
   vine             : # Username
   weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:

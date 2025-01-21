@@ -11,7 +11,9 @@ I am a Research Scientist Lead at Criteo AI Lab, where I focus on advancing the 
 
 ## Research Interests
 
-My research spans several key areas in machine learning and artificial intelligence:
+I currently focus on **Foundation models for recommender systems & 3d vision**
+
+Yet, my research insterest spans several areas in machine learning and artificial intelligence:
 
 * **Machine Learning & Deep Learning**: Developing novel architectures and methods for complex learning tasks
 * **Fair Machine Learning**: Working on approaches to ensure AI systems are equitable and unbiased
@@ -19,7 +21,6 @@ My research spans several key areas in machine learning and artificial intellige
 * **Reinforcement Learning**: Exploring decision-making processes in autonomous systems
 * **Computer Vision**: Investigating visual processing and understanding
 
-Yet I currently focus on **Foundation models for recommender systems & 3d vision**
 
 ## Recent Work
 

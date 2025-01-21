@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Jérémie Mary"
 title_separator          : "-"
 name                     : &name "Jérémie Mary"
-description              : &description "Research Scientist at Criteo AI Lab, focusing on Machine Learning, Recommender Systems, and Fair ML"
+description              : &description "Research Scientist Lead at Criteo AI Lab, focusing on Machine Learning, Recommender Systems, and Fair ML"
 url                      : https://jeremiemary.github.io # Update this with your GitHub username
 baseurl                  : "" 
 repository               : "jeremiemary/jeremiemary.github.io"

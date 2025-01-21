@@ -19,6 +19,8 @@ My research spans several key areas in machine learning and artificial intellige
 * **Reinforcement Learning**: Exploring decision-making processes in autonomous systems
 * **Computer Vision**: Investigating visual processing and understanding
 
+Yet I currently focus on **Fondation models for recommender systems & 3d vision**
+
 ## Recent Work
 
 Some of my notable contributions include:
@@ -51,6 +53,3 @@ I'm always interested in collaborating on challenging problems in machine learni
 * [Google Scholar](https://scholar.google.com/citations?user=T3dQRjAAAAAJ&hl=fr)
 * [X (Twitter)](https://x.com/JeremieMary)
 
----
-
-For more information about my work, please check out my [publications](/publications/), [CV](/cv/), or connect with me on social media.

@@ -28,6 +28,10 @@ Some of my notable contributions include:
 * **Visual Processing & Language**: Published groundbreaking work on modulating early visual processing through language (NeurIPS 2017)
 * **Recommender Systems**: Developed innovative approaches using autoencoders for recommendation tasks
 * **Fair ML**: Advanced the field of fairness-aware learning for continuous attributes and treatments (ICML 2019)
+* Current PhD students:
+  * [Simon Lepage](https://www.linkedin.com/in/simon-lepage-a70815294/?originalSubdomain=fr)
+  * [Karim Kassab](https://www.linkedin.com/in/karim-kassab-37bb61193/?originalSubdomain=fr)
+
 
 ## Impact & Collaboration
 
@@ -44,6 +48,14 @@ Throughout my career, I have been committed to education and mentorship:
 * Supervised numerous PhD and Master's students
 * Taught advanced courses in Machine Learning and Deep Learning
 * Guided research projects in both academic and industrial settings
+* Former PhD students:
+  * [Olivier Nicol](https://www.linkedin.com/in/olivier-nicol-82407674/?originalSubdomain=fr)
+  * [Florian Strub](https://www.linkedin.com/in/florian-strub-64443527/?originalSubdomain=fr)
+  * [Romain Warlop](https://www.linkedin.com/in/romain-warlop-phd-8063466b/?originalSubdomain=fr)
+  * [Thibaut Issenhuth](https://www.linkedin.com/in/thibautissenhuth/?originalSubdomain=fr)
+
+
+
 
 ## Get in Touch
 

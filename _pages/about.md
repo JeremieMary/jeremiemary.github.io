@@ -9,6 +9,8 @@ redirect_from:
 
 I am a Research Scientist Lead at Criteo AI Lab, where I focus on advancing the fields of Machine Learning, Recommender Systems, and Fair ML. Previously, I served as an Associate Professor at Université de Lille, where I also completed my HDR in Computer Science. PhD from University of Paris Saclay.
 
+Trying to do science within the LLM craziness.
+
 ## Research Interests
 
 I currently focus on **Foundation models for recommender systems & 3d vision**

@@ -1,13 +1,11 @@
 ---
 permalink: /
-title: "Jérémie Mary"
+title: "About Me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-
-# About Me
 
 I am a Research Scientist Lead at Criteo AI Lab, where I focus on advancing the fields of Machine Learning, Recommender Systems, and Fair ML. Previously, I served as an Associate Professor at Université de Lille, where I also completed my PhD in Computer Science.
 

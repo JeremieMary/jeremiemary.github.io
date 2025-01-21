@@ -57,7 +57,7 @@ Throughout my career, I have been committed to education and mentorship:
 
 I'm always interested in collaborating on challenging problems in machine learning and AI. You can reach me via:
 
-* Email: j.mary@criteo.com
+* Email: [j.mary@criteo.com](mailto:j.mary@criteo.com)
 * [Google Scholar](https://scholar.google.com/citations?user=T3dQRjAAAAAJ&hl=fr)
 * [X (Twitter)](https://x.com/JeremieMary)
 

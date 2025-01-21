@@ -1,0 +1,28 @@
+---
+layout: archive
+title: "Teaching"
+permalink: /teaching/
+author_profile: true
+---
+
+{% include base_path %}
+
+<h2>Teaching Experience at Université de Lille</h2>
+
+<ul>
+  <li>Machine Learning</li>
+  <li>Deep Learning</li>
+  <li>Reinforcement Learning</li>
+  <li>Data Science</li>
+</ul>
+
+<h2>Student Supervision</h2>
+<ul>
+  <li>PhD Students</li>
+  <li>Master's Students</li>
+  <li>Research Interns</li>
+</ul>
+
+{% for post in site.teaching reversed %}
+  {% include archive-single.html %}
+{% endfor %}

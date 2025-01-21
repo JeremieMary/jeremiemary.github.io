@@ -33,20 +33,13 @@ Some of my notable contributions include:
   * [Karim Kassab](https://www.linkedin.com/in/karim-kassab-37bb61193/?originalSubdomain=fr)
 
 
-## Impact & Collaboration
-
-My research has garnered over 2,000 citations, with significant contributions to both academic literature and industrial applications. I actively collaborate with researchers across institutions including:
-
-* Criteo AI Lab
-* Université de Lille
-* Various international research partners
 
 ## Teaching & Mentorship
 
 Throughout my career, I have been committed to education and mentorship:
 
 * Supervised numerous PhD and Master's students
-* Taught advanced courses in Machine Learning and Deep Learning
+* Taught advanced courses in Machine Learning and Deep Learning at Lille, ENSAE Paris, centrale Lille and university PSL.  
 * Guided research projects in both academic and industrial settings
 * Former PhD students:
   * [Olivier Nicol](https://www.linkedin.com/in/olivier-nicol-82407674/?originalSubdomain=fr)

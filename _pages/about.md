@@ -19,7 +19,7 @@ My research spans several key areas in machine learning and artificial intellige
 * **Reinforcement Learning**: Exploring decision-making processes in autonomous systems
 * **Computer Vision**: Investigating visual processing and understanding
 
-Yet I currently focus on **Fondation models for recommender systems & 3d vision**
+Yet I currently focus on **Foundation models for recommender systems & 3d vision**
 
 ## Recent Work
 

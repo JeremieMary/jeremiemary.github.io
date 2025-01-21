@@ -38,9 +38,11 @@ Some of my notable contributions include:
 
 Throughout my career, I have been committed to education and mentorship:
 
-* Supervised numerous PhD and Master's students
 * Taught advanced courses in Machine Learning and Deep Learning at Lille, ENSAE Paris, centrale Lille and university PSL.  
 * Guided research projects in both academic and industrial settings
+* Won Recsys & ICML challenges on recommender systems
+* Organized challenges and be member of ICML chairs
+* Area chair at Neurips & ICML
 * Former PhD students:
   * [Olivier Nicol](https://www.linkedin.com/in/olivier-nicol-82407674/?originalSubdomain=fr)
   * [Florian Strub](https://www.linkedin.com/in/florian-strub-64443527/?originalSubdomain=fr)

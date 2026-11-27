@@ -34,6 +34,11 @@
 @import "archive";
 @import "sidebar";
 
+// Site customizations (loaded after theme partials)
+@import "theme";
+@import "home";
+@import "profile";
+
 @import "vendor/font-awesome/fontawesome";
 @import "vendor/font-awesome/solid";
 @import "vendor/font-awesome/brands";

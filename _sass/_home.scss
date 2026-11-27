@@ -1,0 +1,242 @@
+/* ==========================================================================
+   HOME PAGE (_pages/about.md)
+   All classes are prefixed .home-*. Colors and fonts come only from the
+   shared custom properties defined in _theme.scss (with fallbacks), so
+   light and dark modes both work. Plain libsass syntax (GitHub Pages).
+   ========================================================================== */
+
+.page__content {
+
+  /* ---------- Intro ---------- */
+
+  p.home-lead {
+    font-size: 1.12em;
+    line-height: 1.6;
+    color: var(--c-text, #222);
+    margin-bottom: 0.75em;
+  }
+
+  p.home-lead--tagline {
+    font-family: var(--font-serif, Georgia, serif);
+    font-style: italic;
+    color: var(--c-muted, #666);
+    margin-bottom: 1.5em;
+  }
+
+  /* ---------- Shared muted text ---------- */
+
+  p.home-muted,
+  p.home-note {
+    color: var(--c-muted, #666);
+    font-size: 0.9em;
+    margin-top: 0.75em;
+  }
+
+  /* ---------- Current Research: card grid ---------- */
+
+  .home-research {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85em;
+    margin: 1em 0 0.5em;
+  }
+
+  .home-card {
+    background: var(--c-surface, #f7f7f8);
+    border: 1px solid var(--c-border, #e2e2e6);
+    border-left: 3px solid var(--c-accent, #1f4e79);
+    border-radius: 6px;
+    padding: 0.85em 1em;
+
+    p {
+      margin: 0;
+      font-size: 0.9em;
+      line-height: 1.5;
+      color: var(--c-muted, #666);
+      text-indent: 0;
+    }
+
+    p:first-child {
+      margin-bottom: 0.35em;
+      font-size: 0.98em;
+      color: var(--c-text, #222);
+    }
+  }
+
+  /* ---------- Recent Publications ---------- */
+
+  ul.home-pubs {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  li.home-pub {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.9em;
+    margin: 0;
+    padding: 0.7em 0;
+    border-bottom: 1px solid var(--c-border, #e2e2e6);
+
+    &:first-child {
+      border-top: 1px solid var(--c-border, #e2e2e6);
+    }
+  }
+
+  .home-pub__body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  a.home-pub__title {
+    font-weight: 600;
+    color: var(--c-text, #222);
+    text-decoration: none;
+    line-height: 1.4;
+
+    &:hover,
+    &:focus {
+      color: var(--c-accent, #1f4e79);
+      text-decoration: underline;
+    }
+  }
+
+  .home-pub__authors {
+    margin-top: 0.15em;
+    font-size: 0.85em;
+    color: var(--c-muted, #666);
+
+    strong {
+      color: var(--c-text, #222);
+    }
+  }
+
+  .home-pub__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-top: 0.4em;
+  }
+
+  a.home-btn {
+    display: inline-block;
+    padding: 0.05em 0.6em;
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.72em;
+    line-height: 1.6;
+    text-transform: lowercase;
+    color: var(--c-accent, #1f4e79);
+    border: 1px solid var(--c-accent, #1f4e79);
+    border-radius: 4px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: var(--c-accent-soft, #e6eef6);
+      text-decoration: none;
+    }
+  }
+
+  .home-pill {
+    flex: 0 0 auto;
+    display: inline-block;
+    padding: 0.1em 0.65em;
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.72em;
+    font-weight: 600;
+    line-height: 1.6;
+    white-space: nowrap;
+    color: var(--c-accent, #1f4e79);
+    background: var(--c-accent-soft, #e6eef6);
+    border-radius: 999px;
+    margin-top: 0.15em;
+  }
+
+  /* ---------- PhD Students ---------- */
+
+  p.home-students__label {
+    margin: 1em 0 0.3em;
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--c-muted, #666);
+  }
+
+  ul.home-students__list {
+    list-style: none;
+    margin: 0 0 0.5em;
+    padding: 0;
+  }
+
+  li.home-student {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.6em;
+    row-gap: 0.1em;
+    margin: 0;
+    padding: 0.3em 0;
+  }
+
+  .home-student__name {
+    font-weight: 600;
+  }
+
+  .home-student__meta {
+    font-size: 0.82em;
+    color: var(--c-muted, #666);
+  }
+
+  .home-tag {
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.75em;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--c-accent, #1f4e79);
+  }
+
+  /* ---------- Service / Teaching ---------- */
+
+  ul.home-list {
+    margin-top: 0.5em;
+
+    li {
+      margin-bottom: 0.3em;
+      line-height: 1.5;
+    }
+  }
+
+  /* ---------- Contact: inline row ---------- */
+
+  ul.home-contact {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 1.4em;
+    margin: 0.5em 0 1em;
+    padding: 0;
+
+    li {
+      margin: 0;
+    }
+  }
+}
+
+/* Two-column research grid from 600px up */
+@media (min-width: 600px) {
+  .page__content .home-research {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Narrow screens: venue pill above the title instead of beside it */
+@media (max-width: 599px) {
+  .page__content li.home-pub {
+    flex-direction: column-reverse;
+    gap: 0.3em;
+  }
+}

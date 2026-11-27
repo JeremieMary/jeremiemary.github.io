@@ -1,0 +1,31 @@
+{%- comment -%}
+  Renders _data/students.yml (current, then former). Used by _pages/about.md.
+{%- endcomment -%}
+{%- assign students = site.data.students -%}
+<div class="home-students">
+{%- if students.current %}
+<p class="home-students__label">Current</p>
+<ul class="home-students__list">
+{%- for s in students.current %}
+<li class="home-student home-student--current">
+{%- if s.url %}<a class="home-student__name" href="{{ s.url }}">{{ s.name | escape }}</a>{% else %}<span class="home-student__name">{{ s.name | escape }}</span>{% endif %}
+<span class="home-student__meta">{{ s.since | escape }}{% if s.topic %} · {{ s.topic | escape }}{% endif %}{% if s.coadvisors %} · co-advised with {{ s.coadvisors | escape }}{% endif %}</span>
+</li>
+{%- endfor %}
+</ul>
+{%- endif %}
+{%- if students.former %}
+<p class="home-students__label">Former</p>
+<ul class="home-students__list">
+{%- for s in students.former %}
+<li class="home-student">
+{%- if s.url %}<a class="home-student__name" href="{{ s.url }}">{{ s.name | escape }}</a>{% else %}<span class="home-student__name">{{ s.name | escape }}</span>{% endif %}
+<span class="home-student__meta">PhD {{ s.year }}{% if s.institution %} · {{ s.institution | escape }}{% endif %}{% if s.coadvisors %} · co-advised with {{ s.coadvisors | escape }}{% endif %}</span>
+{%- if s.destination %}
+<span class="home-tag">→ {{ s.destination | escape }}</span>
+{%- endif %}
+</li>
+{%- endfor %}
+</ul>
+{%- endif %}
+</div>

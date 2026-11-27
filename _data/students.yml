@@ -1,0 +1,53 @@
+# PhD students shown on the home page (_pages/about.md).
+# current: name, url (optional), since, topic (optional), coadvisors (optional)
+# former:  name, url (optional), year, institution, coadvisors (optional),
+#          destination (optional, shown as "→ destination"); newest first.
+
+current:
+  - name: "Abdoul Rahim Zeba"
+    since: "2026–"
+    topic: "recommender systems with a very large number of choices"
+    coadvisors: "Patrick Gallinari"
+
+former:
+  - name: "Karim Kassab"
+    url: https://www.linkedin.com/in/karim-kassab-37bb61193/
+    year: 2026
+    institution: "IGN / Université Gustave Eiffel"
+    coadvisors: "Laurent Caraffa and Valérie Gouet-Brunet"
+    destination: "Criteo"
+
+  - name: "Simon Lepage"
+    url: https://www.linkedin.com/in/simon-lepage-a70815294/
+    year: 2025
+    institution: "ENPC / IMAGINE"
+    coadvisors: "David Picard"
+    destination: "Mistral"
+
+  - name: "Thibaut Issenhuth"
+    url: https://thibautissenhuth.github.io/
+    year: 2023
+    institution: "ENPC / IMAGINE"
+    coadvisors: "David Picard"
+    destination: "Criteo"
+
+  - name: "Florian Strub"
+    url: https://www.linkedin.com/in/florian-strub-64443527/
+    year: 2020
+    institution: "Université de Lille"
+    coadvisors: "Olivier Pietquin"
+    destination: "Cohere"
+
+  - name: "Romain Warlop"
+    url: https://www.linkedin.com/in/romain-warlop-phd-8063466b/
+    year: 2018
+    institution: "Université de Lille"
+    coadvisors: "Alessandro Lazaric"
+    destination: "Fifty-Five"
+
+  - name: "Olivier Nicol"
+    url: https://www.linkedin.com/in/olivier-nicol-82407674/
+    year: 2013
+    institution: "Université de Lille"
+    coadvisors: "Philippe Preux"
+    destination: "OVH"

@@ -1,0 +1,54 @@
+# Recent publications shown on the home page (_pages/about.md), newest first.
+# Fields:
+#   title   (required) paper title, plain text
+#   url     (required) where the title links to
+#   venue   (optional) short badge text, e.g. "ICML 2026" or "arXiv 2025"
+#   authors (optional) author line; "J. Mary" is bolded automatically
+#   links   (optional) small outlined buttons; each has a label and a url
+#
+# Example:
+# - title: "My New Paper"
+#   url: https://arxiv.org/abs/XXXX.XXXXX
+#   venue: "NeurIPS 2026"
+#   authors: "A. Author, J. Mary"
+#   links:
+#     - label: paper
+#       url: https://arxiv.org/abs/XXXX.XXXXX
+#     - label: code
+#       url: https://github.com/...
+
+- title: "SphericalDreamer: Generating Navigable Immersive 3D Worlds with Panorama Fusion"
+  url: https://sphericaldreamer.github.io/
+  venue: "ICML 2026"
+  links:
+    - label: project
+      url: https://sphericaldreamer.github.io/
+
+- title: "Fused-Planes: Why Train a Thousand Tri-Planes When You Can Share?"
+  url: https://arxiv.org/abs/2410.23742
+  venue: "ICLR 2026"
+  links:
+    - label: paper
+      url: https://arxiv.org/abs/2410.23742
+
+- title: "Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder"
+  url: https://arxiv.org/abs/2410.22936
+  venue: "ICLR 2025"
+  links:
+    - label: paper
+      url: https://arxiv.org/abs/2410.22936
+
+- title: "Closing the Performance Gap in Generative Recommenders with Collaborative Tokenization and Efficient Modeling"
+  url: https://arxiv.org/abs/2508.14910
+  venue: "arXiv 2025"
+  authors: "S. Lepage, J. Mary, D. Picard"
+  links:
+    - label: paper
+      url: https://arxiv.org/abs/2508.14910
+
+- title: "Markov Chain Estimation with In-Context Learning"
+  url: https://arxiv.org/abs/2508.03934
+  venue: "GRETSI 2025"
+  links:
+    - label: paper
+      url: https://arxiv.org/abs/2508.03934

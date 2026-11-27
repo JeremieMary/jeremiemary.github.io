@@ -1,0 +1,652 @@
+/* ==========================================================================
+   THEME: typography, accent color, dark mode
+   Loaded after all Minimal Mistakes partials; overrides by cascade only.
+
+   Shared contract (other partials rely on these names):
+     --c-bg          page background
+     --c-surface     card / sidebar / footer background, slightly off --c-bg
+     --c-text        body text
+     --c-muted       secondary text (meta, nav, captions)
+     --c-accent      links, highlights
+     --c-accent-soft tinted background for badges
+     --c-border      hairlines, rules
+     --font-serif    body copy
+     --font-sans     headings, nav, UI
+
+   Contrast (WCAG): light  text/bg 15.6, muted/bg 6.4, accent/bg 8.4
+                    dark   text/bg 14.3, muted/bg 7.8, accent/bg 8.7
+   ========================================================================== */
+
+:root {
+  --c-bg: #fcfbf8;
+  --c-surface: #f3f2ee;
+  --c-text: #1c2129;
+  --c-muted: #555d69;
+  --c-accent: #1f4e79;
+  --c-accent-soft: #e4edf6;
+  --c-border: #dfddd6;
+
+  /* internal helpers (not part of the shared contract) */
+  --c-accent-hover: #163a5c;
+  --c-code-bg: #f3f2ee;
+  --c-code-text: #3b4450;
+  --c-shadow: rgba(20, 23, 28, 0.12);
+  --c-on-accent: #ffffff;
+
+  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #14171c;
+    --c-surface: #1b1f25;
+    --c-text: #e7e5e0;
+    --c-muted: #a4abb5;
+    --c-accent: #8bb8e8;
+    --c-accent-soft: #1e2e40;
+    --c-border: #2e343c;
+
+    --c-accent-hover: #b3d1f2;
+    --c-code-bg: #1b1f25;
+    --c-code-text: #d3d6dc;
+    --c-shadow: rgba(0, 0, 0, 0.5);
+    --c-on-accent: #14171c;
+  }
+}
+
+
+/*
+   Base
+   ========================================================================== */
+
+html {
+  background-color: var(--c-bg);
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-serif);
+  line-height: 1.65;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: var(--c-text);
+  background: var(--c-accent-soft);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--c-text);
+}
+
+h1 {
+  letter-spacing: -0.025em;
+}
+
+h4, h5, h6 {
+  letter-spacing: 0;
+}
+
+/* links */
+a {
+  color: var(--c-accent);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+
+  &:visited {
+    color: var(--c-accent);
+  }
+
+  &:hover {
+    color: var(--c-accent-hover);
+    text-decoration: underline;
+  }
+}
+
+a:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+}
+
+blockquote {
+  color: var(--c-muted);
+  border-left-color: var(--c-accent);
+}
+
+hr {
+  border-top-color: var(--c-border);
+}
+
+u,
+ins {
+  border-bottom-color: var(--c-text);
+}
+
+abbr[title],
+abbr[data-original-title] {
+  border-bottom-color: var(--c-muted);
+}
+
+figcaption {
+  color: var(--c-muted);
+  font-family: var(--font-sans);
+}
+
+small, .small {
+  color: var(--c-muted);
+}
+
+
+/*
+   Page content: measure and vertical rhythm
+   ========================================================================== */
+
+.page__title {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.page__lead {
+  font-family: var(--font-serif);
+  color: var(--c-muted);
+}
+
+.page__content {
+  max-width: 70ch;
+  font-family: var(--font-serif);
+  font-size: 1rem;      /* 18px from 768px up (html font-size), 16px below */
+  line-height: 1.65;
+
+  p, li, dl {
+    font-size: 1em;
+  }
+
+  p {
+    margin: 0 0 1.1em;
+  }
+
+  h2 {
+    margin-top: 2.75em;
+    margin-bottom: 0.75em;
+    padding-bottom: 0.4em;
+    font-size: 1.35em;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  > h2:first-child {
+    margin-top: 0.5em;
+  }
+
+  h3 {
+    margin-top: 2em;
+    margin-bottom: 0.4em;
+    font-size: 1.1em;
+  }
+
+  h4 {
+    margin-top: 1.75em;
+    font-size: 0.95em;
+  }
+
+  /* in-text links: quiet underline, accent on hover */
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--c-border);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+    &:hover {
+      color: var(--c-accent-hover);
+      text-decoration-color: currentColor;
+
+      img {
+        box-shadow: 0 0 10px var(--c-shadow);
+      }
+    }
+  }
+
+  dt {
+    font-family: var(--font-sans);
+  }
+
+  dd {
+    font-family: var(--font-serif);
+    font-size: 0.95em;
+  }
+
+  /* wide elements may use the full column */
+  table,
+  div.highlighter-rouge,
+  figure.highlight {
+    max-width: 100%;
+  }
+}
+
+.page__meta,
+.page__taxonomy,
+.page__share-title,
+.page__meta-title,
+.page__related-title,
+.page__comments-title {
+  font-family: var(--font-sans);
+  color: var(--c-muted);
+}
+
+.page__taxonomy-item {
+  color: var(--c-muted);
+  border-color: var(--c-border);
+  background: var(--c-surface);
+
+  &:hover {
+    color: var(--c-accent);
+  }
+}
+
+.page__content + .pagination,
+.page__meta + .pagination,
+.page__share + .pagination,
+.page__comments + .pagination {
+  border-top-color: var(--c-border);
+}
+
+.pagination li a,
+.pagination--pager {
+  font-family: var(--font-sans);
+  color: var(--c-muted);
+  border-color: var(--c-border);
+
+  &:hover {
+    color: var(--c-accent);
+  }
+
+  &.current {
+    color: var(--c-on-accent);
+    background: var(--c-accent);
+  }
+}
+
+.archive__item-title {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+.archive__item-excerpt,
+.archive__subtitle {
+  color: var(--c-muted);
+}
+
+.archive__subtitle {
+  border-bottom-color: var(--c-border);
+}
+
+
+/*
+   Masthead and top navigation
+   ========================================================================== */
+
+.masthead {
+  background: var(--c-bg);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.masthead__inner-wrap {
+  font-family: var(--font-sans);
+}
+
+.greedy-nav {
+  background: var(--c-bg);
+  font-family: var(--font-sans);
+
+  a {
+    color: var(--c-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    transition: color 0.15s ease-in-out;
+
+    &:visited {
+      color: var(--c-muted);
+    }
+
+    &:hover {
+      color: var(--c-accent);
+      text-decoration: none;
+    }
+  }
+
+  /* site title */
+  .masthead__menu-item--lg a {
+    color: var(--c-text);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+
+    &:visited {
+      color: var(--c-text);
+    }
+
+    &:hover {
+      color: var(--c-accent);
+    }
+  }
+
+  /* hover underline bar under visible links */
+  .visible-links a:before {
+    height: 2px;
+    background: var(--c-accent);
+  }
+
+  /* hamburger toggle */
+  button {
+    background-color: transparent;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--c-accent-soft);
+    }
+  }
+
+  .navicon,
+  .navicon:before,
+  .navicon:after {
+    background: var(--c-text);
+  }
+
+  .close .navicon {
+    background: transparent;
+  }
+
+  /* overflow dropdown */
+  .hidden-links {
+    background: var(--c-surface);
+    border-color: var(--c-border);
+    box-shadow: 0 6px 20px var(--c-shadow);
+
+    &:before {
+      border-color: var(--c-border) transparent;
+    }
+
+    &:after {
+      border-color: var(--c-surface) transparent;
+    }
+
+    a {
+      color: var(--c-text);
+
+      &:visited {
+        color: var(--c-text);
+      }
+
+      &:hover {
+        color: var(--c-accent);
+        background: var(--c-accent-soft);
+      }
+    }
+
+    li {
+      border-bottom-color: var(--c-border);
+    }
+  }
+}
+
+.breadcrumbs {
+  font-family: var(--font-sans);
+  color: var(--c-muted);
+}
+
+
+/*
+   Sidebar (colors only; layout lives in _profile.scss)
+   ========================================================================== */
+
+.sidebar {
+  color: var(--c-text);
+}
+
+.author__name {
+  color: var(--c-text);
+}
+
+.author__pronouns,
+.author__bio,
+.author__desktop {
+  color: var(--c-muted);
+}
+
+.author__urls {
+  background: var(--c-surface);
+  border-color: var(--c-border);
+
+  &:before {
+    border-color: var(--c-border) transparent;
+  }
+
+  &:after {
+    border-color: var(--c-surface) transparent;
+  }
+
+  a {
+    color: var(--c-text);
+
+    &:visited {
+      color: var(--c-text);
+    }
+
+    &:hover {
+      color: var(--c-accent);
+    }
+  }
+}
+
+@include breakpoint($large) {
+  .author__urls {
+    background: transparent;
+  }
+}
+
+.author__urls-wrapper .btn--inverse {
+  color: var(--c-text) !important;
+  background-color: var(--c-surface);
+  border-color: var(--c-border) !important;
+
+  &:hover {
+    color: var(--c-accent) !important;
+    background-color: var(--c-accent-soft);
+  }
+}
+
+
+/*
+   Footer
+   ========================================================================== */
+
+.page__footer {
+  color: var(--c-muted);
+  background-color: var(--c-surface);
+  border-top: 1px solid var(--c-border);
+  font-family: var(--font-sans);
+
+  a,
+  a:visited {
+    color: var(--c-muted);
+  }
+
+  a:hover {
+    color: var(--c-accent);
+    text-decoration: underline;
+  }
+
+  .fas,
+  .fab,
+  .far,
+  .fal,
+  .fa,
+  .ai {
+    color: var(--c-muted);
+  }
+}
+
+.page__footer-copyright,
+.page__footer-follow li {
+  font-family: var(--font-sans);
+}
+
+.page__footer-follow li {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+
+/*
+   Code
+   ========================================================================== */
+
+tt, code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+p > code,
+a > code,
+li > code,
+figcaption > code,
+td > code {
+  color: var(--c-code-text);
+  background: var(--c-code-bg);
+  border-color: var(--c-border);
+  box-shadow: none;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  background-color: var(--c-code-bg);
+  border-color: var(--c-border);
+  box-shadow: none;
+  color: var(--c-code-text);
+
+  &:before {
+    color: var(--c-muted);
+    background-color: var(--c-surface);
+  }
+}
+
+.highlight {
+  color: var(--c-code-text);
+}
+
+
+/*
+   Tables
+   ========================================================================== */
+
+table {
+  font-family: var(--font-sans);
+  color: var(--c-text);
+  border-color: var(--c-border);
+}
+
+thead {
+  background-color: var(--c-surface);
+  border-bottom-color: var(--c-border);
+}
+
+th,
+td {
+  border-color: var(--c-border);
+}
+
+
+/*
+   Misc. components with hard-coded light colors
+   ========================================================================== */
+
+.toc {
+  font-family: var(--font-sans);
+  color: var(--c-muted);
+  background-color: var(--c-surface);
+  border-color: var(--c-border);
+  box-shadow: none;
+
+  .nav__title {
+    color: var(--c-on-accent);
+    background: var(--c-accent);
+  }
+}
+
+.toc__menu a {
+  color: var(--c-muted);
+  border-bottom-color: var(--c-border);
+
+  &:hover {
+    color: var(--c-accent);
+    background: var(--c-accent-soft);
+  }
+}
+
+.nav__list .active {
+  color: var(--c-on-accent);
+  background: var(--c-accent);
+
+  &:hover {
+    color: var(--c-on-accent);
+  }
+}
+
+.nav__sub-title {
+  border-bottom-color: var(--c-border);
+}
+
+.btn {
+  font-family: var(--font-sans);
+}
+
+
+/*
+   Dark mode: things that cannot be expressed through the variables alone
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Solarized-light token colors tuned for a dark background */
+  .highlight {
+    .err, .g, .l, .n, .p, .ge, .gs, .ld, .na, .nb, .nc, .no, .nd, .ni,
+    .ne, .nf, .nl, .nn, .nx, .py, .nt, .nv, .w, .bp, .vc, .vg, .vi {
+      color: #c5ccd3;
+    }
+
+    .c, .cm, .c1, .cs, .gh, .gu, .gp {
+      color: #8a96a3;
+    }
+  }
+
+  .notice,
+  .notice--primary,
+  .notice--info,
+  .notice--warning,
+  .notice--success,
+  .notice--danger {
+    color: var(--c-text);
+    background-color: var(--c-surface);
+  }
+
+  input, textarea, select {
+    color: var(--c-text);
+    background-color: var(--c-surface);
+    border-color: var(--c-border);
+  }
+}

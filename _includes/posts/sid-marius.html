@@ -1,0 +1,20 @@
+{% include base_path %}
+<!-- Figure: what TIGER and MARIUS read while decoding the next item. Logic: assets/js/sid-figures.js -->
+<figure class="post-fig" id="sid-marius">
+  <svg class="post-fig__svg" viewBox="0 0 560 318" role="img" aria-label="Two diagrams. Top, TIGER: the history is flattened into N times L code tokens, encoded by a bidirectional encoder, and every decoded code cross-attends to all of them. Bottom, MARIUS: each item is one fused token, a causal temporal transformer produces a context vector h, and a small depth transformer decodes the four codes of the next item from h alone."></svg>
+  <div class="post-fig__controls">
+    <button type="button" class="post-fig__btn" data-k="decode">Decode the next item</button>
+    <label class="post-fig__slider">History length N
+      <input type="range" min="3" max="8" value="6" data-k="n" aria-label="History length">
+      <output data-k="nout">6</output>
+    </label>
+  </div>
+  <div class="post-fig__stats post-fig__stats--row" aria-live="polite">
+    <div><span class="post-fig__label">TIGER sequence tokens</span><span class="post-fig__value" data-k="tTok">–</span></div>
+    <div><span class="post-fig__label">MARIUS sequence tokens</span><span class="post-fig__value" data-k="mTok">–</span></div>
+    <div><span class="post-fig__label">TIGER history reads per code</span><span class="post-fig__value" data-k="tRead">–</span></div>
+    <div><span class="post-fig__label">MARIUS history reads per code</span><span class="post-fig__value" data-k="mRead">–</span></div>
+  </div>
+  <figcaption>Each item has a semantic ID of L = 4 codes (colors). TIGER flattens the history into N·L tokens, runs a bidirectional encoder over them (no KV cache), and each of the L decoding steps cross-attends to every one of those tokens, for each beam. MARIUS sums the code embeddings of an item into one token, runs a causal transformer over N tokens, and hands a single context vector h to a depth transformer that only ever sees L tokens. In the paper, at N = 50 on one H200, this gives 33× more training items per second and 3× faster beam search with 10 beams.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/sid-figures.js"></script>

@@ -1,0 +1,29 @@
+{% include base_path %}
+<!-- Figure: residual quantization of a toy catalog, with and without the collaborative term. Logic: assets/js/sid-figures.js -->
+<figure class="post-fig" id="sid-cosette">
+  <div class="post-fig__panel">
+    <svg class="post-fig__svg" viewBox="0 0 340 340" role="img" aria-label="A two-dimensional latent space with 32 products. Shape gives the product category from its text; color gives the first token of its semantic ID. A slider moves the products from a layout driven by their text to a layout driven by which products are bought together, and the codebooks follow."></svg>
+    <div>
+      <div class="sid-fig__legend" aria-hidden="true">
+        <span><svg viewBox="-7 -7 14 14"><circle r="5"/></svg>Footwear</span>
+        <span><svg viewBox="-7 -7 14 14"><rect x="-5" y="-5" width="10" height="10" rx="1.5"/></svg>Electronics</span>
+        <span><svg viewBox="-7 -7 14 14"><path d="M0,-6 L5.5,4 L-5.5,4 Z"/></svg>Outdoor gear</span>
+        <span><svg viewBox="-7 -7 14 14"><path d="M0,-6 L6,0 L0,6 L-6,0 Z"/></svg>Food</span>
+      </div>
+      <div class="sid-fig__rows" data-k="timelines" aria-label="Four shopping timelines; each chip is one product, colored by the first token of its semantic ID"></div>
+      <div class="post-fig__stats">
+        <div><span class="post-fig__label">Bought-together pairs sharing token 1</span><span class="post-fig__value" data-k="co">–</span></div>
+        <div><span class="post-fig__label">Same-category pairs sharing token 1</span><span class="post-fig__value" data-k="cat">–</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="post-fig__controls">
+    <button type="button" class="post-fig__btn" data-k="train">Add the collaborative loss</button>
+    <label class="post-fig__slider">Weight of L<sub>C</sub>
+      <input type="range" min="0" max="100" value="0" data-k="lambda" aria-label="Weight of the collaborative loss">
+      <output data-k="lout">0.00</output>
+    </label>
+  </div>
+  <figcaption>A toy catalog of 32 products in a 2D latent space, quantized with three residual levels (4, 3 and 3 codes). With the reconstruction loss alone, the first token mostly encodes the text category: running shoes sit next to slippers. The collaborative term pulls together products that appear in the same timelines, so the first token starts to describe a shopping context instead. Hover a product or a timeline to see its codes. In COSETTE both losses stay in the objective, so the real tokenizer lands somewhere in the middle of this slider; the slider itself only interpolates positions, it does not run the training.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/sid-figures.js"></script>

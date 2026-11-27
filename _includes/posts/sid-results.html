@@ -1,0 +1,20 @@
+{% include base_path %}
+<!-- Figure: Amazon Reviews 2023 results (Table 11 of the paper). Logic: assets/js/sid-figures.js -->
+<figure class="post-fig" id="sid-results">
+  <div class="post-fig__controls sid-fig__top">
+    <div class="sid-fig__legend sid-fig__legend--bars" aria-hidden="true">
+      <span><i class="sid-fig__sw sid-fig__bar--0"></i>TIGER</span>
+      <span><i class="sid-fig__sw sid-fig__bar--1"></i>SASRec++</span>
+      <span><i class="sid-fig__sw sid-fig__bar--2"></i>MARIUS + COSETTE</span>
+    </div>
+    <div class="post-fig__seg" role="group" aria-label="Metric">
+      <button type="button" class="post-fig__btn is-on" data-metric="r10" aria-pressed="true">R@10</button>
+      <button type="button" class="post-fig__btn" data-metric="n10" aria-pressed="false">NDCG@10</button>
+      <button type="button" class="post-fig__btn" data-metric="r5" aria-pressed="false">R@5</button>
+      <button type="button" class="post-fig__btn" data-metric="n5" aria-pressed="false">NDCG@5</button>
+    </div>
+  </div>
+  <svg class="post-fig__svg" viewBox="0 0 560 340" role="img" aria-label="Grouped bar chart over ten Amazon Reviews 2023 categories comparing TIGER, SASRec++ and MARIUS with COSETTE. TIGER is far behind everywhere; MARIUS beats SASRec++ on R@10 in nine of ten categories, the exception being Automotive."></svg>
+  <figcaption>Test metrics on the ten Amazon Reviews 2023 categories (77k to 267k items, 197k to 796k users), from Table 11 of the paper. The number printed is MARIUS; it is in bold accent when MARIUS is at least as good as SASRec++. On R@10 it wins nine categories out of ten. On NDCG@5 the two are tied five to five: MARIUS gains most once it is allowed to look a little further down the list, which matches Figure 4a of the paper.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/sid-figures.js"></script>

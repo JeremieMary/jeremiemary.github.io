@@ -1,0 +1,36 @@
+{% include base_path %}
+<!-- Figure: semantic IDs in recommendation, 2023 to 2026. Filter logic: assets/js/sid-figures.js -->
+<figure class="post-fig sid-tl" id="sid-timeline">
+  <div class="post-fig__controls sid-fig__top">
+    <div class="post-fig__seg" role="group" aria-label="Filter">
+      <button type="button" class="post-fig__btn is-on" data-tl="all" aria-pressed="true">Everything</button>
+      <button type="button" class="post-fig__btn" data-tl="prod" aria-pressed="false">In production</button>
+      <button type="button" class="post-fig__btn" data-tl="collab" aria-pressed="false">Behavior in the tokenizer</button>
+    </div>
+  </div>
+  <ol class="sid-tl__list">
+    <li data-tags="acad"><time>May 2023</time><span><a href="https://arxiv.org/abs/2305.05065">TIGER</a> (Google): RQ-VAE semantic IDs from text embeddings, a T5 that generates the next item's codes.</span></li>
+    <li data-tags="prod"><time>Jun 2023</time><span><a href="https://arxiv.org/abs/2306.08121">Better generalization with semantic IDs</a> (YouTube): SIDs replace random IDs as ranking features.</span></li>
+    <li data-tags="prod"><time>Feb 2025</time><span><a href="https://arxiv.org/abs/2502.18965">OneRec</a> (Kuaishou): one generative model for retrieval and ranking, balanced residual K-means codes.</span></li>
+    <li data-tags="prod"><time>Apr 2025</time><span><a href="https://arxiv.org/abs/2504.02137">SID features in ads ranking</a> (Meta): SID prefixes among the top sparse features.</span></li>
+    <li data-tags="prod collab"><time>Jun 2025</time><span><a href="https://arxiv.org/abs/2506.13695">OneRec technical report</a>: item embeddings aligned with co-click and Swing pairs, then quantized with RQ-Kmeans, as two separate stages.</span></li>
+    <li data-tags="acad"><time>Jul 2025</time><span><a href="https://arxiv.org/abs/2507.22224">GRID</a> (Snap): an open framework to benchmark SID tokenizers and generators.</span></li>
+    <li data-tags="acad collab" class="is-ours"><time>12 Aug 2025</time><span><a href="https://arxiv.org/abs/2508.14910">COSETTE and MARIUS</a> (this post): co-occurrence contrastive loss inside the quantizer, one token per item with a small depth decoder.</span></li>
+    <li data-tags="acad"><time>Aug 2025</time><span><a href="https://arxiv.org/abs/2508.10478">Semantic IDs for joint search and recommendation</a> (Spotify).</span></li>
+    <li data-tags="prod"><time>Aug 2025</time><span><a href="https://arxiv.org/abs/2508.20900">OneRec-V2</a>: a "lazy" decoder-only design that encodes the context once.</span></li>
+    <li data-tags="prod collab" class="is-key"><time>9 Oct 2025</time><span><a href="https://arxiv.org/abs/2510.07784">PLUM</a> (YouTube, Google DeepMind): RQ-VAE with a co-occurrence contrastive loss, then a Gemini-based generative retriever, in production on YouTube.</span></li>
+    <li data-tags="prod"><time>Nov 2025</time><span><a href="https://arxiv.org/abs/2511.10138">GPR</a> (Tencent): one generative model for Weixin Channels ads, with a decoder split between user intent and ad generation.</span></li>
+    <li data-tags="acad"><time>Dec 2025</time><span><a href="https://arxiv.org/abs/2512.24762">OpenOneRec</a>: open 1.7B and 8B foundation models and a benchmark.</span></li>
+    <li data-tags="prod"><time>Apr 2026</time><span><a href="https://arxiv.org/abs/2604.03949">Semantic IDs at Snapchat</a>: SIDs as ranking features and extra retrieval sources.</span></li>
+    <li data-tags="prod collab"><time>May 2026</time><span><a href="https://arxiv.org/abs/2606.01396">Cross-domain user SIDs</a> (LinkedIn): SIDs from behavioral embeddings beat SIDs from profile text in a production ads ranker.</span></li>
+    <li data-tags="prod"><time>Jul 2026</time><span><a href="https://arxiv.org/abs/2607.15591">RecGPT-V3</a> (Taobao): an LLM that reasons over tags and grounds items with SIDs.</span></li>
+    <li data-tags="acad"><time>Sep 2026</time><span><a href="https://recsys.acm.org/recsys26/session-1/">RecSys 2026</a> opens its main track with a full session on semantic IDs.</span></li>
+    <li data-tags="prod"><time>Sep 2026</time><span><a href="https://arxiv.org/abs/2609.39327">GEAR</a> (ByteDance): tokenizer, generator and reranker trained jointly for Douyin ads.</span></li>
+    <li data-tags="prod collab"><time>Oct 2026</time><span><a href="https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/">GenRecs tokenization</a> (Meta): the ads tokenizer combines content with engagement representations.</span></li>
+    <li data-tags="prod collab"><time>Oct 2026</time><span><a href="https://arxiv.org/abs/2610.33435">PinGER</a> (Pinterest): SIDs distilled toward engagement graph embeddings, one served token per history item.</span></li>
+    <li data-tags="acad"><time>Oct 2026</time><span><a href="https://arxiv.org/abs/2610.32980">Deco</a>: a backbone over one token per item and a small KV-cached decoder for the codes, the closest academic relative of MARIUS.</span></li>
+    <li data-tags="prod"><time>Nov 2026</time><span><a href="https://arxiv.org/abs/2611.08804">SID-LLM</a> (Shopify): one SID-generating LLM for search and recommendation.</span></li>
+  </ol>
+  <figcaption>A selection, not a survey. "In production" means the paper or blog post reports a deployment or an online A/B test. "Behavior in the tokenizer" means the codes are shaped by co-occurrence or engagement data, not only by content.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/sid-figures.js"></script>

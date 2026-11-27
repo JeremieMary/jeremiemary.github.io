@@ -240,3 +240,120 @@
     gap: 0.3em;
   }
 }
+
+/* ---------- Intro with semantic-ID animation (_includes/home/semantic-ids.html) ---------- */
+
+.page__content {
+
+  .home-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .home-viz {
+    display: block; /* the theme makes figure a flex row */
+    margin: 0 auto 0.75em;
+    width: 100%;
+    max-width: 300px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+
+    &.is-ready {
+      opacity: 1;
+    }
+  }
+
+  .home-viz__stage {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* square */
+    touch-action: pan-y;
+  }
+
+  .home-viz__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Generated semantic ID (bottom left) and hover tooltip */
+  .home-viz__tokens,
+  .home-viz__tip {
+    position: absolute;
+    pointer-events: none;
+    font-family: var(--font-sans, sans-serif);
+    font-size: 11px;
+    line-height: 1.35;
+    color: var(--c-muted, #666);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+
+    &.is-visible {
+      opacity: 1;
+    }
+  }
+
+  .home-viz__ids {
+    display: block;
+    font-family: var(--font-mono, monospace);
+    letter-spacing: 0.02em;
+    color: var(--c-accent, #1f4e79);
+  }
+
+  .home-viz__name {
+    display: block;
+    color: var(--c-text, #222);
+  }
+
+  .home-viz__tokens {
+    left: 4px;
+    bottom: 2px;
+    /* keep the IDs readable over the dots */
+    text-shadow: 0 0 3px var(--c-bg, #fff), 0 0 3px var(--c-bg, #fff);
+
+    .home-viz__ids.is-hist {
+      color: var(--c-muted, #666);
+    }
+  }
+
+  .home-viz__tip {
+    padding: 0.35em 0.55em;
+    white-space: nowrap;
+    background: var(--c-surface, #f7f7f8);
+    border: 1px solid var(--c-border, #e2e2e6);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px var(--c-shadow, rgba(0, 0, 0, 0.12));
+    transform: translate(12px, -50%);
+    transition: opacity 0.15s ease;
+
+    &.is-left {
+      transform: translate(calc(-100% - 12px), -50%);
+    }
+  }
+}
+
+/* Side by side from 768px up */
+@media (min-width: 768px) {
+  .page__content {
+    .home-intro {
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 1.75em;
+      align-items: center;
+    }
+
+    .home-viz {
+      margin: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page__content .home-viz {
+    transition: none;
+  }
+}

@@ -1,0 +1,15 @@
+{% include base_path %}
+<!--
+  Home page animation: products dissolve into an embedding space, get
+  quantized into semantic IDs, and a recommender generates the next product
+  token by token. Logic: assets/js/semantic-ids.js (+ semantic-ids-products.js).
+  Styles: _sass/_home.scss (.home-viz).
+-->
+<figure class="home-viz" role="img" aria-label="Animation: products dissolve into a cloud of embeddings, are quantized into semantic IDs, and a recommender generates the next product one token at a time">
+  <div class="home-viz__stage">
+    <canvas class="home-viz__canvas" aria-hidden="true"></canvas>
+    <div class="home-viz__tokens" aria-hidden="true"></div>
+    <div class="home-viz__tip" aria-hidden="true"></div>
+  </div>
+</figure>
+<script type="module" src="{{ base_path }}/assets/js/semantic-ids.js"></script>

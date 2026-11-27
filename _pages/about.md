@@ -7,11 +7,21 @@ redirect_from:
   - /about.html
 ---
 
+<!-- Intro: text on the left, semantic-ID animation on the right (stacked on narrow screens). -->
+<div class="home-intro" markdown="1">
+<div class="home-intro__text" markdown="1">
+
 I am a Senior Staff Researcher and team lead at [Criteo AI Lab](https://ailab.criteo.com/) in Paris, where I lead the **Commerce Foundation Models** team. Before joining Criteo in 2017, I was an Associate Professor at Université de Lille and a member of the Inria SequeL team, where I defended my HDR in 2015. I received my PhD from Université Paris XI (Orsay) in 2005.
 {: .home-lead}
 
 Trying to do science within the LLM craziness.
 {: .home-lead .home-lead--tagline}
+
+</div>
+
+{% include home/semantic-ids.html %}
+
+</div>
 
 ## Current Research
 

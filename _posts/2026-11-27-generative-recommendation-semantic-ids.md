@@ -136,5 +136,3 @@ The paper was rejected, and I understand some of the reasons: the small benchmar
 What I would do now is mostly about scale. The interesting regime is millions of items, where the depth decoder carries the whole index and has to grow with it, and where the tokenizer has to be retrained as the catalog changes without reshuffling every code. Those are the problems the production systems in the timeline are now working on.
 
 Simon's PhD thesis is *Recommendation with Transformers: from dense to generative retrieval* (École des Ponts, 2025). The paper is on [arXiv](https://arxiv.org/abs/2508.14910).
-
-*A note on how this post was made. This is material I would not have had the time to produce: the write-up, the literature follow-up and the interactive figures were made with an LLM, which I prompted and whose output I read and corrected. I believe some uses of LLMs can be positive in this way, when an expert does the prompting and the reading.*

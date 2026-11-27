@@ -1,0 +1,28 @@
+{% include base_path %}
+<!-- Figure: window length k and the terms of the empirical telescope distance. Logic: assets/js/telescope-figures.js -->
+<figure class="post-fig" id="tel-window">
+  <svg class="post-fig__svg" viewBox="0 0 560 344" role="img" aria-label="Top: the first 64 values of two time series A and B, each switching between a low and a high level, with a window of length k sliding along them. Bottom left: empirical CDFs of the two sets of windows along the best separating direction, with the largest gap marked. Bottom right: the gap for each window length from 1 to 6."></svg>
+  <div class="post-fig__controls">
+    <div class="post-fig__seg" role="group" aria-label="Window length k">
+      <button type="button" class="post-fig__btn is-on" data-kwin="1" aria-pressed="true">k = 1</button>
+      <button type="button" class="post-fig__btn" data-kwin="2" aria-pressed="false">2</button>
+      <button type="button" class="post-fig__btn" data-kwin="3" aria-pressed="false">3</button>
+      <button type="button" class="post-fig__btn" data-kwin="4" aria-pressed="false">4</button>
+      <button type="button" class="post-fig__btn" data-kwin="5" aria-pressed="false">5</button>
+      <button type="button" class="post-fig__btn" data-kwin="6" aria-pressed="false">6</button>
+    </div>
+    <div class="post-fig__seg" role="group" aria-label="Process generating B">
+      <button type="button" class="post-fig__btn is-on" data-mode="diff" aria-pressed="true">B: other rotation</button>
+      <button type="button" class="post-fig__btn" data-mode="same" aria-pressed="false">B: same rotation</button>
+    </div>
+    <button type="button" class="post-fig__btn post-fig__btn--ghost" data-k="resample">New samples</button>
+  </div>
+  <div class="post-fig__stats post-fig__stats--row" aria-live="polite">
+    <div><span class="post-fig__label">α for A, B</span><span class="post-fig__value">0.118, <span data-k="alphaB">0.393</span></span></div>
+    <div><span class="post-fig__label">d&#770;<sub><span data-k="klab">1</span></sub></span><span class="post-fig__value" data-k="dk">–</span></div>
+    <div><span class="post-fig__label">Weight w<sub><span data-k="klab">1</span></sub></span><span class="post-fig__value" data-k="wk">–</span></div>
+    <div><span class="post-fig__label">D&#770; = Σ<sub>k≤6</sub> w<sub>k</sub> d&#770;<sub>k</sub></span><span class="post-fig__value" data-k="sum">–</span></div>
+  </div>
+  <figcaption>Two samples of 500 points from the rotation processes of Section 9.1 of the paper, reduced to one dimension: a hidden phase moves by α around the circle at each step, and the observation is Gaussian noise around 0 or 1 depending on which half the phase is in. Both processes spend half their time at each level, so at k = 1 the two CDFs coincide up to sampling noise. From k = 2 on, the windows record how often the level switches, and a single halfspace separates A from B. Each d&#770;<sub>k</sub> is the largest CDF gap over a random search of directions, which approximates the empirical risk minimizer over halfspaces in ℝ<sup>k</sup>. With both samples drawn from the same rotation, every term should be zero. The terms that remain grow with k, because the same 500 points are spread over more dimensions, and the weights w<sub>k</sub> = 1/k² keep them from dominating the sum. The sum stops at k = 6 ≈ ln 500, the truncation used in the paper's experiments.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/telescope-figures.js"></script>

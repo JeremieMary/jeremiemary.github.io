@@ -1,0 +1,130 @@
+/* ==========================================================================
+   POST FIGURES (_includes/posts/*.html, logic in assets/js/hgr-figures.js)
+   Colors come from the theme tokens in _theme.scss, plus two figure tokens.
+   ========================================================================== */
+
+:root {
+  --fig-pos: var(--c-accent, #1f4e79);
+  --fig-neg: #b5541c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fig-neg: #f0a46a;
+  }
+}
+
+.post-fig {
+  margin: 1.75em 0;
+  padding: 1em 1em 0.75em;
+  background: var(--c-surface, #f3f2ee);
+  border: 1px solid var(--c-border, #dfddd6);
+  border-radius: 8px;
+  font-family: var(--font-sans, sans-serif);
+
+  figcaption {
+    margin-top: 0.75em;
+    font-size: 0.8em;
+    line-height: 1.5;
+    color: var(--c-muted, #555d69);
+  }
+}
+
+.post-fig__panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75em;
+  align-items: center;
+
+  @media (min-width: 40em) {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.post-fig__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post-fig__axis { stroke: var(--c-muted, #555d69); stroke-width: 1; opacity: 0.6; }
+.post-fig__tick { fill: var(--c-muted, #555d69); font-size: 11px; font-family: var(--font-sans, sans-serif); }
+.post-fig__tick--strong { fill: var(--c-text, #1c2129); font-weight: 600; }
+
+.post-fig__dot { fill: var(--fig-pos); fill-opacity: 0.7; transition: fill 0.4s ease; }
+.is-shuffled .post-fig__dot { fill: var(--fig-neg); }
+
+.post-fig__bar { transition: y 0.35s ease, height 0.35s ease, fill 0.25s ease; }
+.post-fig__bar.is-found { fill: var(--fig-pos); }
+.post-fig__bar.is-res { fill: var(--fig-neg); fill-opacity: 0.55; }
+.post-fig__kline { stroke: var(--c-text, #1c2129); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.post-fig__seg-found { fill: var(--fig-pos); }
+.post-fig__seg-res { fill: var(--fig-neg); fill-opacity: 0.55; }
+.post-fig__mark { stroke: var(--c-text, #1c2129); stroke-width: 2; }
+.post-fig__mark--chi { stroke: var(--c-muted, #555d69); stroke-width: 1.5; stroke-dasharray: 3 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .post-fig__dot, .post-fig__bar { transition: none; }
+}
+
+.post-fig__stats {
+  display: grid;
+  gap: 0.5em;
+  font-size: 0.8em;
+
+  > div { display: flex; flex-direction: column; }
+}
+.post-fig__stats--row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0.75em;
+
+  @media (min-width: 40em) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.post-fig__label { color: var(--c-muted, #555d69); }
+.post-fig__value { color: var(--c-text, #1c2129); font-variant-numeric: tabular-nums; font-weight: 500; }
+
+.post-fig__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em 1em;
+  margin-top: 0.75em;
+  font-size: 0.85em;
+}
+
+.post-fig__btn {
+  font: inherit;
+  font-size: 0.95em;
+  padding: 0.35em 0.8em;
+  border-radius: 5px;
+  border: 1px solid var(--c-accent, #1f4e79);
+  background: var(--c-accent, #1f4e79);
+  color: var(--c-on-accent, #fff);
+  cursor: pointer;
+
+  &:hover { background: var(--c-accent-hover, #163a5c); }
+}
+.post-fig__btn--ghost,
+.post-fig__seg .post-fig__btn {
+  background: transparent;
+  color: var(--c-accent, #1f4e79);
+
+  &:hover { background: var(--c-accent-soft, #e4edf6); }
+}
+.post-fig__seg {
+  display: inline-flex;
+
+  .post-fig__btn { border-radius: 0; }
+  .post-fig__btn:first-child { border-radius: 5px 0 0 5px; }
+  .post-fig__btn:last-child { border-radius: 0 5px 5px 0; border-left: 0; }
+  .post-fig__btn.is-on { background: var(--c-accent, #1f4e79); color: var(--c-on-accent, #fff); }
+}
+
+.post-fig__slider {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--c-text, #1c2129);
+
+  input { width: 11em; accent-color: var(--c-accent, #1f4e79); }
+  output { min-width: 1.5em; font-variant-numeric: tabular-nums; font-weight: 600; }
+}

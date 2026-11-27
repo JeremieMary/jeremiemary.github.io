@@ -1,0 +1,22 @@
+{% include base_path %}
+<!-- Figure: dependence spectrum, rank-k capture and the upper bound on HGR. Logic: assets/js/hgr-figures.js -->
+<figure class="post-fig" id="hgr-spectrum">
+  <svg class="post-fig__svg" viewBox="0 0 560 260" role="img" aria-label="Bar chart of squared singular values of the dependence kernel. Bars up to rank k are captured by the networks; the remaining bars form the residual energy. Below, a gauge compares the true HGR with the upper bound for the chosen k."></svg>
+  <div class="post-fig__controls">
+    <label class="post-fig__slider">Rank k = <output data-k="kout">0</output>
+      <input type="range" min="0" max="16" step="1" value="0" data-k="k">
+    </label>
+    <div class="post-fig__seg" role="group" aria-label="Spectral decay">
+      <button type="button" class="post-fig__btn is-on" data-decay="fast" aria-pressed="true">Fast decay</button>
+      <button type="button" class="post-fig__btn" data-decay="slow" aria-pressed="false">Slow decay</button>
+    </div>
+  </div>
+  <div class="post-fig__stats post-fig__stats--row" aria-live="polite">
+    <div><span class="post-fig__label">HGR = ρ<sub>1</sub></span><span class="post-fig__value" data-k="hgr">–</span></div>
+    <div><span class="post-fig__label">Captured Σ<sub>i≤k</sub> ρ<sub>i</sub>²</span><span class="post-fig__value" data-k="cap">–</span></div>
+    <div><span class="post-fig__label">Residual energy</span><span class="post-fig__value" data-k="res">–</span></div>
+    <div><span class="post-fig__label">Upper bound</span><span class="post-fig__value" data-k="bound">–</span></div>
+  </div>
+  <figcaption>An illustrative spectrum of 16 modes, with the networks assumed to recover the top k singular functions exactly. At k = 0 the bound is √χ², the 2019 penalty. Each learned mode moves its energy out of the residual, but the two terms add, so the bound first jumps above √χ² and only drops below it once the residual is small. With fast decay a few modes are enough; with slow decay, the typical worry for high-dimensional representations, the residual term dominates for a long time, and it is the term we do not yet know how to bound from data.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/hgr-figures.js"></script>

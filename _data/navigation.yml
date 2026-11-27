@@ -9,5 +9,7 @@ main:
     url: /
   - title: "CV"
     url: /cv/
+  - title: "Blog"
+    url: /blog/
   - title: "Scholar"
     url: https://scholar.google.com/citations?user=T3dQRjAAAAAJ

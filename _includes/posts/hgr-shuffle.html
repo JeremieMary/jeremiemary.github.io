@@ -1,0 +1,18 @@
+{% include base_path %}
+<!-- Figure: building negative pairs by shuffling y inside a batch. Logic: assets/js/hgr-figures.js -->
+<figure class="post-fig" id="hgr-shuffle">
+  <div class="post-fig__panel">
+    <svg class="post-fig__svg" viewBox="0 0 420 300" role="img" aria-label="Scatter plot of a batch of pairs (x, y) where y depends on x through a parabola; a button shuffles y across the batch, which breaks the dependence while keeping both marginals."></svg>
+    <div class="post-fig__stats" aria-live="polite">
+      <div><span class="post-fig__label">Pairs</span><span class="post-fig__value" data-k="state">joint, (x<sub>i</sub>, y<sub>i</sub>)</span></div>
+      <div><span class="post-fig__label">Pearson correlation</span><span class="post-fig__value" data-k="pearson">–</span></div>
+      <div><span class="post-fig__label">Binned HGR estimate</span><span class="post-fig__value" data-k="hgr">–</span></div>
+    </div>
+  </div>
+  <div class="post-fig__controls">
+    <button type="button" class="post-fig__btn" data-k="toggle">Shuffle y within the batch</button>
+    <button type="button" class="post-fig__btn post-fig__btn--ghost" data-k="resample">New batch</button>
+  </div>
+  <figcaption>A batch of 300 pairs with y = x² + noise. Linear correlation is close to zero, yet y is almost a function of x. Shuffling y moves each point vertically to another point's y value: the marginals stay the same and the dependence disappears, which gives samples from P<sub>X</sub> ⊗ P<sub>Y</sub> for free. The HGR estimate (second singular value of a 6×6 binned ratio) does not drop to zero on the shuffled batch; that floor is the finite-sample bias of a minibatch estimate.</figcaption>
+</figure>
+<script defer src="{{ base_path }}/assets/js/hgr-figures.js"></script>

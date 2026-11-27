@@ -270,11 +270,9 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width:
   .sid-tl__list li { transition: none; }
 }
 
-/* Note at the end of every blog post (_includes/posts/llm-note.html) */
-.post-note {
-  margin-top: 2.5em;
-  padding-top: 1em;
-  border-top: 1px solid var(--c-border, #dfddd6);
+/* Note on LLM use at the top of the blog list (_pages/blog.md) */
+.blog-note {
+  margin: 0 0 1.5em;
   font-size: 0.85em;
   color: var(--c-muted, #555d69);
 }

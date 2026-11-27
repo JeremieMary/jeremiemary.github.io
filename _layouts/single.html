@@ -60,8 +60,6 @@ layout: default
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
-
-        {% if page.collection == 'posts' %}{% include posts/llm-note.html %}{% endif %}
       </section>
 
       <footer class="page__meta">
